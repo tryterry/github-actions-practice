@@ -28,6 +28,6 @@ jobs:
           echo "Hello Github Actions"
       - name: Github Actions 자체에 저장되어 있는 변수 사용하기
         run: |
-          echo "Hello ${{ github.actor }}"
-          echo "Hello ${{ github.repository }}"
+          echo "$GITHUB_SHA"
+          echo "$GITHUB_WORKFLOW"
           echo "Hello ${{ github.event_name }}"
