@@ -31,3 +31,7 @@ jobs:
           echo "$GITHUB_SHA"
           echo "$GITHUB_WORKFLOW"
           echo "Hello ${{ github.event_name }}"
+      - name: 아무한테도 노출되면 안되는 값
+        run: |
+          echo "Hello ${{ secrets.MY_NAME }}"
+          echo "Hello ${{ secrets.MY_HOBBY }}"
