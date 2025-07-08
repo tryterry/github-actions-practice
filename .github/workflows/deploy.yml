@@ -1,14 +1,28 @@
+# Workflow 이름
 name: Github Actions 실행해서 배포하기
 
+# Event 실행되는 시점을 설정
+# main 브랜치에 push가 발생했을 Workflow때 실행
 on:
   push:
     branches:
       - main
 
+# 하나의 Workflow 안에 여러 Job을 정의할 수 있다.
+# 각 Job은 병렬로 실행된다.
 jobs:
+  # Job을 식별하기 위한 이름
   My-Deply-Jobs:
+    # ubuntu 의 최신 환경에서 실
     runs-on: ubuntu-latest
 
+    # 특정 작업을 수행할 가장 작은 단위
+    # Job 안에 여러 Step을 정의할 수 있다.
     steps:
+      #
       - name: Hello World 찍기
         run: echo "Hello World"
+      - name: 여러 명령어 문장 작성하기
+        run: |
+          echo "Hello World"
+          echo "Hello Github Actions"
